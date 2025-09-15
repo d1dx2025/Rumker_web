@@ -1,0 +1,277 @@
+/* ================================
+   GLOBAL VARIABLES (Colors & Fonts)
+=================================== */
+:root {
+  /* Font stack (fast-loading system fonts) */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Light Mode Colors */
+  --color-bg-light: #F5F7FA;
+  --color-surface-light: #FFFFFF;
+  --color-text-light: #333333;
+  --color-text-secondary-light: #777777;
+
+  /* Dark Mode Colors */
+  --color-bg-dark: #121212;
+  --color-surface-dark: #1E1E1E;
+  --color-text-dark: #DDDDDD;
+  --color-text-secondary-dark: #AAAAAA;
+
+  /* Accent Colors (shared across modes) */
+  --color-primary: #0078D4; /* Tech Blue */
+  --color-primary-hover: #006CBE;
+  --color-primary-active: #005BA1;
+  --color-secondary: #0C7F75; /* Teal-Green secondary accent */
+
+  /* Status / Semantic Colors */
+  --color-success: #28A745;
+  --color-warning: #FFC107;
+  --color-error: #D32F2F;
+
+  /* UI Neutral Colors */
+  --color-border-light: #E0E0E0;
+  --color-border-dark: #2C2C2C;
+}
+
+/* ================================
+   BASE STYLES (Default: Light Mode)
+=================================== */
+body {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Buttons */
+button.primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+button.primary:hover {
+  background-color: var(--color-primary-hover);
+}
+button.primary:active {
+  background-color: var(--color-primary-active);
+}
+
+/* Cards & Modals */
+.card {
+  background-color: var(--color-surface-light);
+  border: 1px solid var(--color-border-light);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+/* ================================
+   DARK MODE OVERRIDES
+=================================== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-dark);
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+
+  .card {
+    background-color: var(--color-surface-dark);
+    border: 1px solid var(--color-border-dark);
+  }
+
+  button.primary {
+    background-color: var(--color-primary);
+  }
+  button.primary:hover {
+    background-color: #33A9EE; /* lighter for glow effect */
+  }
+}
+
+/* ================================
+   CUSTOM STYLES
+=================================== */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-dark);
+  }
+}
+
+/* Focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
+}
+
+/* Animation for mobile menu */
+#mobile-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hero section text shadow for better readability */
+#home h1 {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  color: #ffffff !important;
+}
+
+#home p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  color: #ffffff !important;
+}
+
+/* Navigation contrast improvements */
+nav {
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+nav a:hover {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+nav h1 {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+#mobile-menu-button {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+#mobile-menu {
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+
+#mobile-menu a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+#mobile-menu a:hover {
+  color: #ffffff !important;
+}
+
+/* Hover effects for cards */
+.card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* Button hover effects */
+button {
+  transition: all 0.3s ease;
+}
+
+/* Form input styles */
+input, textarea, select {
+  transition: all 0.3s ease;
+}
+
+/* Dark mode toggle animation */
+#dark-mode-toggle {
+  transition: all 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Icon transitions */
+svg {
+  transition: all 0.3s ease;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  #home h1 {
+    font-size: 3rem;
+  }
+  
+  #home p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Loading animation for images */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border-light: #000000;
+    --color-border-dark: #FFFFFF;
+  }
+}
