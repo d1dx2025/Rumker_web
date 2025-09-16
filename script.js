@@ -18,45 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Dark mode toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const sunIcon = document.getElementById('sun-icon');
-    const moonIcon = document.getElementById('moon-icon');
-    const body = document.body;
-    
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    
-    // Apply the saved theme
-    if (currentTheme === 'dark') {
-        body.classList.add('dark');
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
-    } else {
-        body.classList.remove('dark');
-        sunIcon.classList.add('hidden');
-        moonIcon.classList.remove('hidden');
-    }
-    
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', function() {
-            // Toggle dark mode
-            body.classList.toggle('dark');
-            
-            // Update icons
-            if (body.classList.contains('dark')) {
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    }
-});
 
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
