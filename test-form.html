@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Contact Form - Rumker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6">Contact Form Test</h1>
+        
+        <div class="bg-white p-6 rounded-lg shadow">
+            <form class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                    <input type="text" id="name" name="name" 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                    <input type="email" id="email" name="email" 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="service" class="block text-sm font-medium mb-2">Service Interest</label>
+                    <select id="service" name="service" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">Select a service</option>
+                        <option value="fraud">Fraud Detection</option>
+                        <option value="intelligence">Intelligence</option>
+                        <option value="law-enforcement">Law Enforcement</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" 
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                </div>
+                <button type="submit" 
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                    Send Message
+                </button>
+            </form>
+        </div>
+        
+        <div class="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+            <h3 class="font-semibold text-yellow-800 mb-2">Test Instructions:</h3>
+            <ol class="list-decimal list-inside text-sm text-yellow-700 space-y-1">
+                <li>Start the backend server: <code>cd backend && npm start</code></li>
+                <li>Try submitting with empty fields to test validation</li>
+                <li>Try submitting with invalid email to test email validation</li>
+                <li>Try submitting with short message to test message validation</li>
+                <li>Fill out the form correctly and submit to test email sending</li>
+                <li>Check if you're redirected to the success page</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

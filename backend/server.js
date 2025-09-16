@@ -10,14 +10,46 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Email configuration
-const transporter = nodemailer.createTransporter({
-  service: 'gmail', // You can change this to your preferred email service
-  auth: {
-    user: process.env.EMAIL_USER, // Your email
-    pass: process.env.EMAIL_PASS  // Your email password or app password
-  }
-});
+// Email configuration - Support for multiple email providers
+let transporter;
+
+// Configure email transporter based on environment variables
+if (process.env.EMAIL_SERVICE === 'gmail') {
+  transporter = nodemailer.createTransporter({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+} else if (process.env.EMAIL_SERVICE === 'protonmail') {
+  transporter = nodemailer.createTransporter({
+    host: 'smtp.protonmail.com',
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+} else if (process.env.EMAIL_SERVICE === 'outlook') {
+  transporter = nodemailer.createTransporter({
+    service: 'hotmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+} else {
+  // Default to Gmail for backward compatibility
+  transporter = nodemailer.createTransporter({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+}
 
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {

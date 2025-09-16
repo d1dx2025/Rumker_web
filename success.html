@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent Successfully - Rumker</title>
+    <meta name="description" content="Your message has been sent successfully. We'll get back to you soon.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0078D4',
+                        'primary-hover': '#006CBE',
+                        'primary-active': '#005BA1',
+                        secondary: '#0C7F75',
+                        'bg-light': '#F5F7FA',
+                        'surface-light': '#FFFFFF',
+                        'text-light': '#333333',
+                        'text-secondary-light': '#777777',
+                        'bg-dark': '#121212',
+                        'surface-dark': '#1E1E1E',
+                        'text-dark': '#DDDDDD',
+                        'text-secondary-dark': '#AAAAAA',
+                        'border-light': '#E0E0E0',
+                        'border-dark': '#2C2C2C'
+                    },
+                    fontFamily: {
+                        'sans': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                        'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg-light text-text-light font-sans transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-surface-light/95 backdrop-blur-sm border-b border-border-light z-50 dark:bg-surface-dark/95 dark:border-border-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-6xl font-bold text-primary">Rumker</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html#home" class="text-2xl text-text-light dark:text-text-dark hover:text-primary transition-colors">Home</a>
+                        <a href="index.html#services" class="text-2xl text-text-light dark:text-text-dark hover:text-primary transition-colors">Platform</a>
+                        <a href="index.html#about" class="text-2xl text-text-light dark:text-text-dark hover:text-primary transition-colors">About</a>
+                        <a href="index.html#contact" class="text-2xl text-text-light dark:text-text-dark hover:text-primary transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Content -->
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <div class="text-center">
+                <!-- Success Icon -->
+                <div class="mx-auto flex items-center justify-center h-24 w-24 rounded-full bg-green-100 dark:bg-green-900/20 mb-6">
+                    <svg class="h-12 w-12 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                
+                <!-- Success Message -->
+                <h1 class="text-4xl font-bold text-text-light dark:text-text-dark mb-4">
+                    Message Sent Successfully!
+                </h1>
+                
+                <p class="text-xl text-text-secondary-light dark:text-text-secondary-dark mb-8">
+                    Thank you for contacting us. We've received your message and will get back to you within 24 hours.
+                </p>
+                
+                <!-- Action Buttons -->
+                <div class="space-y-4">
+                    <a href="index.html" 
+                       class="w-full bg-primary hover:bg-primary-hover text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
+                        Return to Home
+                    </a>
+                    
+                    <a href="index.html#contact" 
+                       class="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
+                        Send Another Message
+                    </a>
+                </div>
+                
+                <!-- Additional Info -->
+                <div class="mt-8 p-6 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg">
+                    <h3 class="text-lg font-semibold text-text-light dark:text-text-dark mb-3">
+                        What happens next?
+                    </h3>
+                    <ul class="text-sm text-text-secondary-light dark:text-text-secondary-dark space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-primary mr-2">•</span>
+                            Our team will review your inquiry within 24 hours
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-2">•</span>
+                            We'll respond to your email with detailed information
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-2">•</span>
+                            If urgent, you can reach us directly at d1dx@proton.me
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle" class="fixed bottom-6 right-6 w-12 h-12 bg-primary hover:bg-primary-hover text-white rounded-full shadow-lg flex items-center justify-center transition-colors z-50">
+        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+    </button>
+
+    <script>
+        // Dark mode functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            const body = document.body;
+            
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            
+            // Apply the saved theme
+            if (currentTheme === 'dark') {
+                body.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                body.classList.remove('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+            
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', function() {
+                    // Toggle dark mode
+                    body.classList.toggle('dark');
+                    
+                    // Update icons
+                    if (body.classList.contains('dark')) {
+                        sunIcon.classList.remove('hidden');
+                        moonIcon.classList.add('hidden');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        sunIcon.classList.add('hidden');
+                        moonIcon.classList.remove('hidden');
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
